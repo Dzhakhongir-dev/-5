@@ -6,31 +6,13 @@ namespace Домашка5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter words to Split");
+            Console.WriteLine("Please enter words to Reverse");
             string input = Console.ReadLine();
 
-            string inputPhrase = "";
-
-            ReverseWords(inputPhrase);
-        }
-        public static string[] StringSpliter(string input, string inputPhrase)
-        {
-            foreach (var item in input.Split())
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\nPlease Enter String to Reverse Them");
-
-            StringSpliter(input, inputPhrase);
-
-            ReverseWords(inputPhrase);
-
-            return input.Split(input);
+            ReverseWords(input);
         }
         public static string[] ReverseWords(string inputPhrase)
         {
-
-            inputPhrase = Console.ReadLine();
             char[] inputStringChars = inputPhrase.ToCharArray();
             int inputStringLenght = inputStringChars.Length;
 
@@ -41,8 +23,20 @@ namespace Домашка5
                 stringReverse += inputPhrase[i];
             }
             Console.WriteLine(stringReverse);
+
+            StringSpliter(inputPhrase);
+
             return stringReverse.Split(inputPhrase);
         }
+        public static string[] StringSpliter(string input)
+        {
+            foreach (var item in input.Split())
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
 
+            return input.Split(input);
+        }
     }
 }
